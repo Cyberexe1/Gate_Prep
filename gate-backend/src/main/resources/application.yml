@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: gate-api
+  config:
+    import: optional:file:./.env[.properties]
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/gate}
+    username: ${DB_USER:gate}
+    password: ${DB_PASSWORD:gate}
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:10}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+  jackson:
+    default-property-inclusion: non_null
+  cache:
+    cache-names: catalog,mocks,moduleQuestions,mockQuestions,grading
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=30m
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+server:
+  port: ${PORT:8080}
+  shutdown: graceful
+  forward-headers-strategy: framework
+  error:
+    include-message: always
+    include-binding-errors: never
+    include-stacktrace: never
+  compression:
+    enabled: true
+    mime-types: application/json
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+app:
+  content-dir: ${CONTENT_DIR:./content}
+  jwt:
+    secret: ${JWT_SECRET:}
+    access-ttl-minutes: 15
+    refresh-ttl-days: 30
+  storage:
+    type: ${STORAGE_TYPE:local}
+    sync-to-s3: ${S3_SYNC_ON_START:false}
+    s3:
+      bucket: ${S3_BUCKET:}
+      region: ${AWS_REGION:ap-south-1}
+      access-key: ${AWS_ACCESS_KEY_ID:}
+      secret-key: ${AWS_SECRET_ACCESS_KEY:}
+      prefix: images/
+      presign-minutes: 10

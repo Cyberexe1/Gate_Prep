@@ -1,0 +1,6 @@
+.gradle/
+build/
+.devdb/
+.env
+*.log
+.idea/

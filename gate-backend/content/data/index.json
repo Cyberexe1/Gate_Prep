@@ -1,0 +1,426 @@
+{
+ "subjects": [
+  {
+   "id": "maths",
+   "name": "Engineering Mathematics",
+   "short": "Engg. Maths",
+   "emoji": "∑",
+   "c1": "#7C4DFF",
+   "c2": "#B388FF",
+   "count": 341,
+   "modules": [
+    {
+     "id": "maths--propositional-and-first-order-logic",
+     "name": "Propositional & First-Order Logic",
+     "count": 51
+    },
+    {
+     "id": "maths--sets-relations-and-functions",
+     "name": "Sets, Relations & Functions",
+     "count": 42
+    },
+    {
+     "id": "maths--algebraic-structures-lattices-and-boolean-algebra",
+     "name": "Algebraic Structures, Lattices & Boolean Algebra",
+     "count": 16
+    },
+    {
+     "id": "maths--combinatorics-and-number-theory",
+     "name": "Combinatorics & Number Theory",
+     "count": 24
+    },
+    {
+     "id": "maths--graph-theory",
+     "name": "Graph Theory",
+     "count": 49
+    },
+    {
+     "id": "maths--linear-algebra",
+     "name": "Linear Algebra",
+     "count": 56
+    },
+    {
+     "id": "maths--calculus",
+     "name": "Calculus",
+     "count": 41
+    },
+    {
+     "id": "maths--probability-and-statistics",
+     "name": "Probability & Statistics",
+     "count": 62
+    }
+   ]
+  },
+  {
+   "id": "digital-logic",
+   "name": "Digital Logic",
+   "short": "Digital Logic",
+   "emoji": "🔌",
+   "c1": "#00B8D4",
+   "c2": "#64FFDA",
+   "count": 134,
+   "modules": [
+    {
+     "id": "digital-logic--boolean-algebra-and-minimization",
+     "name": "Boolean Algebra & Minimization",
+     "count": 44
+    },
+    {
+     "id": "digital-logic--combinational-circuits",
+     "name": "Combinational Circuits",
+     "count": 23
+    },
+    {
+     "id": "digital-logic--sequential-circuits",
+     "name": "Sequential Circuits",
+     "count": 25
+    },
+    {
+     "id": "digital-logic--number-systems-and-representation",
+     "name": "Number Systems & Representation",
+     "count": 42
+    }
+   ]
+  },
+  {
+   "id": "coa",
+   "name": "Computer Organization & Architecture",
+   "short": "COA",
+   "emoji": "🧠",
+   "c1": "#FF6D00",
+   "c2": "#FFAB40",
+   "count": 166,
+   "modules": [
+    {
+     "id": "coa--machine-instructions-and-addressing-modes",
+     "name": "Machine Instructions & Addressing Modes",
+     "count": 33
+    },
+    {
+     "id": "coa--alu-datapath-and-control-unit",
+     "name": "ALU, Datapath & Control Unit",
+     "count": 12
+    },
+    {
+     "id": "coa--pipelining",
+     "name": "Pipelining",
+     "count": 43
+    },
+    {
+     "id": "coa--memory-hierarchy-cache-and-main-memory",
+     "name": "Memory Hierarchy (Cache & Main Memory)",
+     "count": 65
+    },
+    {
+     "id": "coa--i-o-interface-interrupts-and-dma",
+     "name": "I/O Interface (Interrupts & DMA)",
+     "count": 13
+    }
+   ]
+  },
+  {
+   "id": "pds",
+   "name": "Programming & Data Structures",
+   "short": "Programming & DS",
+   "emoji": "💻",
+   "c1": "#2979FF",
+   "c2": "#82B1FF",
+   "count": 218,
+   "modules": [
+    {
+     "id": "pds--c-programming-output-pointers-and-recursion",
+     "name": "C Programming: Output, Pointers & Recursion",
+     "count": 105
+    },
+    {
+     "id": "pds--arrays-stacks-and-queues",
+     "name": "Arrays, Stacks & Queues",
+     "count": 19
+    },
+    {
+     "id": "pds--linked-lists",
+     "name": "Linked Lists",
+     "count": 11
+    },
+    {
+     "id": "pds--trees-bst-avl-heap-and-hashing",
+     "name": "Trees (BST, AVL, Heap) & Hashing",
+     "count": 83
+    }
+   ]
+  },
+  {
+   "id": "algorithms",
+   "name": "Algorithms",
+   "short": "Algorithms",
+   "emoji": "⚙️",
+   "c1": "#00C853",
+   "c2": "#69F0AE",
+   "count": 161,
+   "modules": [
+    {
+     "id": "algorithms--asymptotic-analysis-and-recurrences",
+     "name": "Asymptotic Analysis & Recurrences",
+     "count": 45
+    },
+    {
+     "id": "algorithms--sorting-and-searching",
+     "name": "Sorting & Searching",
+     "count": 24
+    },
+    {
+     "id": "algorithms--divide-and-conquer-greedy-dynamic-programming",
+     "name": "Divide & Conquer / Greedy / Dynamic Programming",
+     "count": 27
+    },
+    {
+     "id": "algorithms--graph-algorithms",
+     "name": "Graph Algorithms",
+     "count": 63
+    },
+    {
+     "id": "algorithms--np-completeness-and-complexity-classes",
+     "name": "NP-Completeness & Complexity Classes",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "toc",
+   "name": "Theory of Computation",
+   "short": "TOC",
+   "emoji": "🔁",
+   "c1": "#F50057",
+   "c2": "#FF80AB",
+   "count": 170,
+   "modules": [
+    {
+     "id": "toc--regular-languages-and-finite-automata",
+     "name": "Regular Languages & Finite Automata",
+     "count": 74
+    },
+    {
+     "id": "toc--context-free-languages-and-pushdown-automata",
+     "name": "Context-Free Languages & Pushdown Automata",
+     "count": 58
+    },
+    {
+     "id": "toc--turing-machines-and-decidability",
+     "name": "Turing Machines & Decidability",
+     "count": 30
+    },
+    {
+     "id": "toc--language-classes-closure-properties-and-pumping-lemma",
+     "name": "Language Classes, Closure Properties & Pumping Lemma",
+     "count": 8
+    }
+   ]
+  },
+  {
+   "id": "compiler",
+   "name": "Compiler Design",
+   "short": "Compiler",
+   "emoji": "🛠️",
+   "c1": "#304FFE",
+   "c2": "#8C9EFF",
+   "count": 110,
+   "modules": [
+    {
+     "id": "compiler--lexical-analysis",
+     "name": "Lexical Analysis",
+     "count": 15
+    },
+    {
+     "id": "compiler--parsing",
+     "name": "Parsing",
+     "count": 43
+    },
+    {
+     "id": "compiler--syntax-directed-translation",
+     "name": "Syntax-Directed Translation",
+     "count": 12
+    },
+    {
+     "id": "compiler--intermediate-code-and-runtime-environment",
+     "name": "Intermediate Code & Runtime Environment",
+     "count": 24
+    },
+    {
+     "id": "compiler--code-optimization-and-data-flow-analysis",
+     "name": "Code Optimization & Data Flow Analysis",
+     "count": 16
+    }
+   ]
+  },
+  {
+   "id": "os",
+   "name": "Operating Systems",
+   "short": "OS",
+   "emoji": "🧩",
+   "c1": "#00897B",
+   "c2": "#4DB6AC",
+   "count": 177,
+   "modules": [
+    {
+     "id": "os--processes-threads-and-system-calls",
+     "name": "Processes, Threads & System Calls",
+     "count": 21
+    },
+    {
+     "id": "os--cpu-scheduling",
+     "name": "CPU Scheduling",
+     "count": 30
+    },
+    {
+     "id": "os--synchronization-and-deadlock",
+     "name": "Synchronization & Deadlock",
+     "count": 48
+    },
+    {
+     "id": "os--memory-management-and-virtual-memory",
+     "name": "Memory Management & Virtual Memory",
+     "count": 47
+    },
+    {
+     "id": "os--file-systems-and-disk-management",
+     "name": "File Systems & Disk Management",
+     "count": 31
+    }
+   ]
+  },
+  {
+   "id": "dbms",
+   "name": "Databases",
+   "short": "DBMS",
+   "emoji": "🗄️",
+   "c1": "#FFAB00",
+   "c2": "#FFD740",
+   "count": 183,
+   "modules": [
+    {
+     "id": "dbms--er-model-and-relational-model",
+     "name": "ER Model & Relational Model",
+     "count": 18
+    },
+    {
+     "id": "dbms--relational-algebra-and-calculus",
+     "name": "Relational Algebra & Calculus",
+     "count": 30
+    },
+    {
+     "id": "dbms--sql",
+     "name": "SQL",
+     "count": 35
+    },
+    {
+     "id": "dbms--normalization-and-functional-dependencies",
+     "name": "Normalization & Functional Dependencies",
+     "count": 37
+    },
+    {
+     "id": "dbms--transactions-and-concurrency-control",
+     "name": "Transactions & Concurrency Control",
+     "count": 34
+    },
+    {
+     "id": "dbms--file-organization-and-indexing",
+     "name": "File Organization & Indexing",
+     "count": 29
+    }
+   ]
+  },
+  {
+   "id": "networks",
+   "name": "Computer Networks",
+   "short": "Networks",
+   "emoji": "🌐",
+   "c1": "#0091EA",
+   "c2": "#40C4FF",
+   "count": 170,
+   "modules": [
+    {
+     "id": "networks--network-basics-layering-and-physical-layer",
+     "name": "Network Basics, Layering & Physical Layer",
+     "count": 7
+    },
+    {
+     "id": "networks--data-link-layer-framing-error-control-and-flow-control",
+     "name": "Data Link Layer (Framing, Error Control & Flow Control)",
+     "count": 29
+    },
+    {
+     "id": "networks--mac-sublayer-ethernet-and-lan",
+     "name": "MAC Sublayer, Ethernet & LAN",
+     "count": 16
+    },
+    {
+     "id": "networks--network-layer-ip-addressing-and-routing",
+     "name": "Network Layer (IP Addressing & Routing)",
+     "count": 60
+    },
+    {
+     "id": "networks--transport-layer-tcp-udp-and-congestion-control",
+     "name": "Transport Layer (TCP/UDP & Congestion Control)",
+     "count": 29
+    },
+    {
+     "id": "networks--application-layer-and-network-security",
+     "name": "Application Layer & Network Security",
+     "count": 29
+    }
+   ]
+  },
+  {
+   "id": "aptitude",
+   "name": "General Aptitude",
+   "short": "Aptitude",
+   "emoji": "📝",
+   "c1": "#D500F9",
+   "c2": "#EA80FC",
+   "count": 271,
+   "modules": [
+    {
+     "id": "aptitude--verbal-ability",
+     "name": "Verbal Ability",
+     "count": 93
+    },
+    {
+     "id": "aptitude--numerical-ability",
+     "name": "Numerical Ability",
+     "count": 99
+    },
+    {
+     "id": "aptitude--analytical-and-logical-reasoning",
+     "name": "Analytical & Logical Reasoning",
+     "count": 46
+    },
+    {
+     "id": "aptitude--data-interpretation",
+     "name": "Data Interpretation",
+     "count": 15
+    },
+    {
+     "id": "aptitude--spatial-and-visual-reasoning",
+     "name": "Spatial & Visual Reasoning",
+     "count": 18
+    }
+   ]
+  },
+  {
+   "id": "misc",
+   "name": "Out-of-Syllabus & Miscellaneous",
+   "short": "Miscellaneous",
+   "emoji": "📚",
+   "c1": "#546E7A",
+   "c2": "#90A4AE",
+   "count": 7,
+   "modules": [
+    {
+     "id": "misc--software-engineering-web-xml-html-and-other",
+     "name": "Software Engineering, Web (XML/HTML) & Other",
+     "count": 7
+    }
+   ]
+  }
+ ]
+}

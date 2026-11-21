@@ -1,0 +1,32 @@
+# Gradle / Android / Java build output
+**/.gradle/
+**/build/
+**/.kotlin/
+**/.idea/
+*.iml
+
+# Local machine settings and generated logs
+**/local.properties
+*.log
+**/build_log*.txt
+
+# Runtime databases and secrets
+**/.devdb/
+**/.env
+**/.env.*
+!**/.env.example
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# The Android client now obtains protected content from the backend.
+# Keep only the small public catalog fallback in Android assets; the backend owns the content copy.
+/GateApp/app/src/main/assets/images/
+/GateApp/app/src/main/assets/data/q/
+/GateApp/app/src/main/assets/data/mock/mock_*.json
+
+# Local captures and temporary tooling output
+*.apk
+*.aab

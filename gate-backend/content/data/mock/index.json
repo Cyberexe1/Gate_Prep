@@ -1,0 +1,144 @@
+{
+ "mocks": [
+  {
+   "id": "mock_1",
+   "n": 1,
+   "title": "Mock Test 1",
+   "questions": 65,
+   "marks": 100,
+   "minutes": 180,
+   "c1": "#5B5BF0",
+   "c2": "#8E54E9",
+   "emoji": "🚀",
+   "sections": [
+    {
+     "name": "General Aptitude",
+     "short": "GA",
+     "from": 1,
+     "to": 10,
+     "marks": 15
+    },
+    {
+     "name": "Computer Science",
+     "short": "CS",
+     "from": 11,
+     "to": 65,
+     "marks": 85
+    }
+   ],
+   "nat": 9
+  },
+  {
+   "id": "mock_2",
+   "n": 2,
+   "title": "Mock Test 2",
+   "questions": 65,
+   "marks": 100,
+   "minutes": 180,
+   "c1": "#00B4DB",
+   "c2": "#0083B0",
+   "emoji": "🌊",
+   "sections": [
+    {
+     "name": "General Aptitude",
+     "short": "GA",
+     "from": 1,
+     "to": 10,
+     "marks": 15
+    },
+    {
+     "name": "Computer Science",
+     "short": "CS",
+     "from": 11,
+     "to": 65,
+     "marks": 85
+    }
+   ],
+   "nat": 14
+  },
+  {
+   "id": "mock_3",
+   "n": 3,
+   "title": "Mock Test 3",
+   "questions": 65,
+   "marks": 100,
+   "minutes": 180,
+   "c1": "#F7971E",
+   "c2": "#FF512F",
+   "emoji": "🔥",
+   "sections": [
+    {
+     "name": "General Aptitude",
+     "short": "GA",
+     "from": 1,
+     "to": 10,
+     "marks": 15
+    },
+    {
+     "name": "Computer Science",
+     "short": "CS",
+     "from": 11,
+     "to": 65,
+     "marks": 85
+    }
+   ],
+   "nat": 18
+  },
+  {
+   "id": "mock_4",
+   "n": 4,
+   "title": "Mock Test 4",
+   "questions": 65,
+   "marks": 100,
+   "minutes": 180,
+   "c1": "#11998E",
+   "c2": "#38EF7D",
+   "emoji": "🌱",
+   "sections": [
+    {
+     "name": "General Aptitude",
+     "short": "GA",
+     "from": 1,
+     "to": 10,
+     "marks": 15
+    },
+    {
+     "name": "Computer Science",
+     "short": "CS",
+     "from": 11,
+     "to": 65,
+     "marks": 85
+    }
+   ],
+   "nat": 9
+  },
+  {
+   "id": "mock_5",
+   "n": 5,
+   "title": "Mock Test 5",
+   "questions": 65,
+   "marks": 100,
+   "minutes": 180,
+   "c1": "#DA22FF",
+   "c2": "#9733EE",
+   "emoji": "🔮",
+   "sections": [
+    {
+     "name": "General Aptitude",
+     "short": "GA",
+     "from": 1,
+     "to": 10,
+     "marks": 15
+    },
+    {
+     "name": "Computer Science",
+     "short": "CS",
+     "from": 11,
+     "to": 65,
+     "marks": 85
+    }
+   ],
+   "nat": 15
+  }
+ ]
+}

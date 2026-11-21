@@ -1,0 +1,10 @@
+# Local development: embedded PostgreSQL, local image files, a fixed (insecure) JWT secret.
+app:
+  jwt:
+    secret: dev-only-secret-change-me-dev-only-secret-change-me
+  dev:
+    pg-dir: ./.devdb
+
+logging:
+  level:
+    com.gateprep: DEBUG
