@@ -81,12 +81,21 @@ fun fmtClock(ms: Long): String {
 /** The Mock Test tab: five boxes, one per full-length paper. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MockListScreen(vm: AppViewModel, onOpen: (String) -> Unit) {
+fun MockListScreen(vm: AppViewModel, onOpen: (String) -> Unit, onRequireLogin: (String) -> Unit) {
     val ex = LocalExtra.current
     val mocks = vm.mockIndex?.mocks.orEmpty()
     var sheet by remember { mutableStateOf<MockInfo?>(null) }
     var now by remember { mutableLongStateOf(System.currentTimeMillis()) }
     LaunchedEffect(Unit) { while (true) { now = System.currentTimeMillis(); delay(1000) } }
+    LaunchedEffect(vm.loggedIn, vm.pendingMock, mocks.size) {
+        val id = vm.pendingMock
+        if (vm.loggedIn && id != null) {
+            mocks.firstOrNull { it.id == id }?.let {
+                sheet = it
+                vm.consumePendingMock()
+            }
+        }
+    }
 
     LazyColumn(
         Modifier.fillMaxSize().background(ex.bg).statusBarsPadding(),
@@ -106,7 +115,11 @@ fun MockListScreen(vm: AppViewModel, onOpen: (String) -> Unit) {
             }
         }
         itemsIndexed(mocks, key = { _, m -> m.id }) { i, m ->
-            StaggerIn(i + 1) { MockCard(vm, m, now) { sheet = m } }
+            StaggerIn(i + 1) {
+                MockCard(vm, m, now) {
+                    if (vm.loggedIn) sheet = m else onRequireLogin(m.id)
+                }
+            }
         }
     }
 

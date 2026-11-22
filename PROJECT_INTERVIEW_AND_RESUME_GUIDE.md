@@ -58,17 +58,15 @@ The planned AWS production architecture uses an Application Load Balancer, ECS F
 - Ran the backend locally using embedded PostgreSQL.
 - Verified that the backend imported **12 subjects, five mock tests, and 2,433 total questions**: 2,108 practice questions plus 325 mock questions.
 - Verified that protected content endpoints return HTTP 401 without authentication.
-- Built an integration-test workflow covering authentication, content access, progress, mock scoring, refresh-token rotation, and logout.
+- Built and verified Android Login/Signup screens, protected subject/practice/mock navigation, return-to-requested-content behavior, account-aware Profile, and logout.
+- Verified API-backed question loading, server-synchronized progress after app restart, server-timed mock startup, and authenticated private-S3 image delivery on the Android emulator.
+- Uploaded 5,010 WebP question, solution, and figure images to a private encrypted S3 bucket and restricted the local uploader to the required `images/` prefix.
 
 ### 2.2 In progress
 
-- Completing the Android login and signup screens.
-- Showing the public Home and Mock Test catalog before login while protecting actual subject and mock content.
-- Redirecting unauthenticated users to login when they tap a subject or mock test.
-- Completing the Android API wiring after the data layer was changed from bundled JSON to network responses.
-- Rebuilding and testing the Android app after the latest networking changes.
 - Making offline progress synchronization durable. Currently, some writes are optimistic and fire-and-forget; a persistent retry queue is still required.
 - Persisting unsent mock autosave changes immediately so a process kill cannot lose the last delayed update.
+- Adding Android automated tests for authentication, protected navigation, token refresh, and offline behavior.
 
 ### 2.3 Planned, not yet deployed
 
@@ -77,7 +75,7 @@ The planned AWS production architecture uses an Application Load Balancer, ECS F
 - Application Load Balancer across two backend tasks.
 - ECS Service Auto Scaling from two to four tasks.
 - ElastiCache using the Valkey engine, accessed through Spring Data Redis.
-- S3 storage for question, figure, and solution images.
+- Moving S3 access from the local restricted uploader key to an ECS IAM task role.
 - CloudFront in front of S3 if image traffic justifies it.
 - Route 53 domain and ACM TLS certificate.
 - CloudWatch dashboards, alarms, logs, and custom online-user metrics.
@@ -306,9 +304,9 @@ After submission the user sees:
 - Correct answers and solution images.
 - Retake option.
 
-### 6.3 Authentication behavior being implemented
+### 6.3 Verified authentication behavior
 
-The desired user flow is:
+The following flow is implemented and verified locally on the Android emulator:
 
 1. App starts and shows the same Home interface without requiring login.
 2. Public catalog metadata is visible.
@@ -566,9 +564,9 @@ Security measures:
 - Paths are normalized.
 - Resolved paths must remain inside the content root.
 
-### Planned S3 mode
+### Current S3 mode
 
-The S3 adapter is already implemented but has not been deployed or tested against a real bucket.
+The S3 adapter is implemented and verified against a real private bucket containing 5,010 WebP assets. The bucket has Block Public Access enabled and SSE-S3 encryption. The local upload user has only list/read/write access to the `images/` prefix.
 
 Production flow:
 
@@ -953,14 +951,12 @@ A strong explanation is:
 
 ## 17. Deployment Roadmap
 
-### Phase 1: Finish local full-stack flow
+### Phase 1: Harden the verified local full-stack flow
 
-- Complete Android login and signup UI.
-- Gate subject and mock content behind authentication.
-- Complete Android compile and emulator tests after network-layer changes.
-- Verify login, signup, logout, refresh, progress, images, mock start/resume/submit, and profile.
-- Add Android UI tests.
+- Add Android UI tests for Login, Signup, protected navigation, and post-login continuation.
+- Verify forced access-token expiry and automatic refresh on the emulator.
 - Add durable offline synchronization.
+- Persist mock dirty state immediately before delayed server autosave.
 
 ### Phase 2: Container and RDS
 
@@ -970,14 +966,12 @@ A strong explanation is:
 - Test Flyway migrations against the same major PostgreSQL version used by RDS.
 - Seed content once and verify row counts.
 
-### Phase 3: S3
+### Phase 3: Finish production S3 integration
 
-- Create a private S3 bucket.
-- Enable block-public-access.
-- Upload WebP assets.
-- Give the ECS task role only `s3:GetObject` access to the required prefix.
-- Switch `STORAGE_TYPE=s3`.
-- Verify short-lived pre-signed URL behavior.
+- Replace the local uploader key with an ECS IAM task role.
+- Store production secrets in Secrets Manager or SSM.
+- Add a lifecycle policy and cost monitoring if needed.
+- Verify missing-object behavior and short-lived pre-signed URLs in production.
 - Remove question/image assets from the release APK after server delivery is stable.
 
 ### Phase 4: AWS compute and networking

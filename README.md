@@ -7,7 +7,8 @@ A full-stack GATE Computer Science preparation platform with a Kotlin/Jetpack Co
 - Android practice and mock-test interfaces are implemented.
 - Spring Boot authentication, content, progress, mock-session, grading, and image APIs run locally.
 - The backend imports 2,108 practice questions and 325 mock questions.
-- Android authentication gating and final API integration are in progress.
+- Android Login/Signup, protected navigation, post-login continuation, API-backed questions/progress, and authenticated S3 image delivery are implemented and verified locally.
+- A private encrypted S3 bucket contains 5,010 question, solution, and figure images; the local uploader has restricted prefix-only permissions.
 - AWS deployment is planned and has not yet been completed.
 
 See [PROJECT_INTERVIEW_AND_RESUME_GUIDE.md](PROJECT_INTERVIEW_AND_RESUME_GUIDE.md) for the full architecture, verified feature list, roadmap, interview explanation, résumé bullets, testing plan, AWS cost estimate, and known limitations.
@@ -34,7 +35,7 @@ The authoritative question/solution content is stored under `gate-backend/conten
 - BCrypt password hashing and short-lived JWT access tokens.
 - Rotating refresh tokens stored as hashes with reuse detection.
 - PostgreSQL/Flyway schema with monthly partitioning for attempt history.
-- Protected local image delivery and an optional private-S3 adapter.
+- Protected S3 image delivery through short-lived pre-signed URLs.
 
 ## Planned AWS architecture
 

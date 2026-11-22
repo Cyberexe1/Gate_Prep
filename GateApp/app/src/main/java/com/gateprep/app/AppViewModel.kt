@@ -50,8 +50,13 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     /** A one-line message for the UI to show once (e.g. "Session expired"). */
     var notice by mutableStateOf<String?>(null)
 
+    /** Destination requested before the user was sent to Login. */
+    var pendingDestination by mutableStateOf<String?>(null)
+        private set
+
     /** The mock whose start sheet should open as soon as the user has signed in. */
     var pendingMock by mutableStateOf<String?>(null)
+        private set
 
     // ------------------------------------------------------------------ public catalog
     var index by mutableStateOf<IndexFile?>(null)
@@ -105,7 +110,8 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             authBusy = true; authError = null
             try {
-                api.login(email.trim(), password)
+                val response = api.login(email.trim(), password)
+                applyUser(response.user)
                 launch { refreshUserData() }
                 onDone()
             } catch (e: ApiException) {
@@ -120,7 +126,8 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             authBusy = true; authError = null
             try {
-                api.register(name.trim(), email.trim(), password)
+                val response = api.register(name.trim(), email.trim(), password)
+                applyUser(response.user)
                 launch { refreshUserData() }
                 onDone()
             } catch (e: ApiException) {
@@ -129,6 +136,26 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
                 authBusy = false
             }
         }
+    }
+
+    fun clearAuthError() {
+        authError = null
+    }
+
+    fun requireAuth(destination: String, mockId: String? = null) {
+        pendingDestination = destination
+        pendingMock = mockId
+        authError = null
+    }
+
+    fun consumePendingDestination(): String? = pendingDestination.also { pendingDestination = null }
+
+    fun consumePendingMock(): String? = pendingMock.also { pendingMock = null }
+
+    fun cancelPendingAuth() {
+        pendingDestination = null
+        pendingMock = null
+        authError = null
     }
 
     fun signOut() {

@@ -40,6 +40,9 @@ class ApiFlowTest {
         Path dir = Files.createTempDirectory(Path.of("build"), "pg-");
         r.add("app.dev.pg-dir", dir::toString);
         r.add("app.content-dir", () -> "content");
+        // A developer's .env may enable S3. Tests stay deterministic and use the local image adapter.
+        r.add("app.storage.type", () -> "local");
+        r.add("app.storage.sync-to-s3", () -> false);
     }
 
     @Autowired TestRestTemplate http;
